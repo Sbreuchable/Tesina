@@ -26,11 +26,11 @@ def estrapola_da_excel(input_file):
 
     cont_sheet = 0
     for sheet in lista_sheets:
-        for elem in sheet['MUTAZIONE']:  # ANALIZZA LA COLONNA DELL'EXCEL DICHIARATA TRA QUADRE
+        for elem in sheet['MUTAZIONE']: 
             if type(elem) is str:
                 if not elem[0].isnumeric():
-                    if len(elem) <= 6:  # CAMBIA QUI SE I RISULTATI SONO PIU' LUNGHI
-                        elem = elem.strip() # RIMUOVE SPAZI BIANCHI
+                    if len(elem) <= 6: 
+                        elem = elem.strip() 
                         aminoacido = elem[0]
                         locazione = elem[1:len(elem) - 1]
                         mutazione = elem[len(elem) - 1]
@@ -95,5 +95,5 @@ def genera_excel(input_file):
 
 if __name__ == '__main__':
     nome_file_elaborato = estrapola_da_excel(
-        "Pieroni_originale.xlsx")  # SE HAI UN FILE SPORCO CAMBIA QUI IL NOME DEL FILE DI INPUT
-    genera_excel(nome_file_elaborato) # SE HAI GIA UN FILE PULITO CAMBIA QUI IL NOME DEL FILE DI INPUT E COMMENTA LA LINEA PRECEDENTE
+        "Pieroni_originale.xlsx") 
+    genera_excel(nome_file_elaborato) 
